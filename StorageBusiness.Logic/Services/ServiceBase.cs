@@ -14,6 +14,7 @@ namespace StorageBusiness.Logic.Services
             if (entities == null || !entities.Any())
                 return 0;
 
+
             return entities.Max(e => e.Id);
         }
 
