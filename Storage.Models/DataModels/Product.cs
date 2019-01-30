@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Storage.Models.DataModels
 {
-    class Product
+    public class Product
     {
         public int Id { get; set; }
 

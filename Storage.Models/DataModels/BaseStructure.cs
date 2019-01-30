@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Storage.Models.DataModels
 {
-    abstract class  BaseStructure
+    public abstract class  BaseStructure
     {
         public DateTime data = new DateTime();
 

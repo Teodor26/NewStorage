@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Storage.Models.DataModels
 {
-    class Purchase:BaseStructure
+   public class Purchase:BaseStructure
     {
     }
 }
