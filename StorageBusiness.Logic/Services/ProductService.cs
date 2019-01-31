@@ -24,7 +24,7 @@ namespace StorageBusiness.Logic.Services
 
     public class ProductService : ServiceBase, IProductService
     {
-        private const string FilePath = @"\bin\Product.txt";
+        private const string FilePath = @"\Product.txt";
 
         private List<Product> _products;
 

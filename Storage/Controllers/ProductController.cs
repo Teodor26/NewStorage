@@ -18,17 +18,24 @@ namespace Storage.Controllers
             _productService = new ProductService();
         }
 
-        [ZeroDivideHandlerFilter]
-        public IHttpActionResult Get()
-        {
-            List<string> result = new List<string>();
+        //[ZeroDivideHandlerFilter]
+        //public IHttpActionResult Get()
+        //{
+        //    List<string> result = new List<string>();
 
-            for (int i = 0; i < 100; i++)
-            {
-                result.Add(i.ToString());
-            }
-            return Ok(result);
-               
+        //    //for (int i = 0; i < 100; i++)
+        //    //{
+        //    //    result.Add((i / i - 1).ToString());
+        //    //}
+        //    return Ok(result);
+
+        //}
+
+        public IHttpActionResult GetAll()
+        {
+            var products = _productService.GetAll();
+
+            return Ok(products);
         }
 
         [HttpGet]
