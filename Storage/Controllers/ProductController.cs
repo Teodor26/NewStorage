@@ -17,6 +17,7 @@ namespace Storage.Controllers
         {
             _productService = new ProductService();
         }
+
         [ZeroDivideHandlerFilter]
         public IHttpActionResult Get()
         {
