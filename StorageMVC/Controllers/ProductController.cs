@@ -1,20 +1,25 @@
-﻿using StorageBusiness.Logic.Services;
-using System;
+﻿using Storage.Models.DataModels;
+using Storage.Services;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace StorageMVC.Controllers
 {
     public class ProductController : Controller
     {
+        private IProductApiService _productService = new ProductApiService();
         // GET: Product
-        public ActionResult Index()
-        {
-            return View();
-        }
+        //public async System.Threading.Tasks.Task<ActionResult> List()
+        //{
+        //    var productList = await _productService.Getlist();
+        //    return View(productList);
+        //}
 
-        private IProductService _productService = new ProductService();
+        public ActionResult List()
+        {
+            IEnumerable<Product> productList = _productService.Getlist();
+
+            return View(productList);
+        }
     }
 }
