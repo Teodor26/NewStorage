@@ -33,7 +33,7 @@ namespace Storage.Controllers
 
         public IHttpActionResult GetAll()
         {
-            var products = _productService.GetAll();
+            var products = _productService;
 
             return Ok(products);
         }
@@ -41,8 +41,11 @@ namespace Storage.Controllers
         [HttpGet]
         public IHttpActionResult GetOne(int Id)
         {
-            var product = _productService.GetAll().ToString();
+            var product = _productService.GetAll().Where(x=>x.Id == Id).FirstOrDefault();
 
+            if (product == null)
+                return BadRequest();
+            else
             return Ok(product);
 
         }
